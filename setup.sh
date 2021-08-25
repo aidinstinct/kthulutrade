@@ -170,7 +170,6 @@ function kraken_ohlcv_build() {
     pip install gdown
     pip install pymongo
     check_installed_mongo
-    sudo apt install mongodb
     cd build_helpers
     echo "----------------------------"
     echo "Fetching Kraken OHLCV"
