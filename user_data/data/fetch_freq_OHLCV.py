@@ -6,7 +6,8 @@ logging.basicConfig(filename='build_kraken_data.log', level=logging.DEBUG)
 
 async def build_kraken_data():
     thisdir = os.getcwd()
-    get_coins = ['XBT', 'ETH', 'USDT']
+    get_coins = ['XBT', 'ETH', 'ADA', 'MLN', 'EWT', 'AAVE', 'ALGO', 'ATOM', 'BCH', 'EOS', 'ETC', 'KAVA', 'KSM', 'LINK', 'LTC', 'MANA', 'MLN', 'QTUM', 'STORJ', 'WAVES', 'XTZ', 'USDT']
+
     #get_coins = ['XBT']
     print(thisdir+'/kraken_csv/all')
     for r, d, f in os.walk(thisdir+'/kraken_csv/all'):
