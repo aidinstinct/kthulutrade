@@ -179,7 +179,7 @@ function kraken_ohlcv_build() {
     mkdir ../user_data/data/kraken_csv
     mkdir ../user_data/data/kraken_csv/all
     mkdir ../user_data/data/kraken_csv/avengers
-    mkdir ../user_data/data/kraken_csv/kraken
+    mkdir ../user_data/data/kraken
     unzip -d ../user_data/data/kraken_csv/all Kraken_OHLCVT.zip 
     cd ../
     cd user_data/data/
