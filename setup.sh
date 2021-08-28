@@ -164,10 +164,11 @@ function install_debian_kraken() {
     sudo apt-get install unzip
     sudo apt-get install -y build-essential autoconf libtool pkg-config make wget git libpython3-dev
     install_talib
-    updateenv
     kraken_ohlcv_build
 }
+
 function kraken_ohlcv_build() {
+    
     check_installed_mongo
     cd build_helpers
     echo "----------------------------"
