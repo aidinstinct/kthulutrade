@@ -159,19 +159,24 @@ function install_debian() {
     sudo apt-get install -y build-essential autoconf libtool pkg-config make wget git libpython3-dev
     install_talib
 }
+
 function install_debian_kraken() {
     sudo apt-get update
     sudo apt-get install unzip
     sudo apt-get install -y build-essential autoconf libtool pkg-config make wget git libpython3-dev
     install_talib
-    kraken_ohlcv_build
     
 }
 
 function kraken_ohlcv_build() {
-    
+    sudo pip3 install pymongo
+    sudo pip3 install pandas
+    python3 -m venv envk
     check_installed_mongo
+    source envk/bin/activate
+    pip install gdown
     cd build_helpers
+    pip install -r requirementsk.txt
     echo "----------------------------"
     echo "Fetching Kraken OHLCV"
     echo "----------------------------"
@@ -181,21 +186,31 @@ function kraken_ohlcv_build() {
     mkdir ../user_data/data/kraken_csv/all
     mkdir ../user_data/data/kraken_csv/avengers
     mkdir ../user_data/data/kraken
-    unzip -d ../user_data/data/kraken_csv/all Kraken_OHLCVT.zip 
+    unzip -d ../user_data/data/kraken_csv/all Kraken_OHLCVT.zip
+    rm -rf Kraken_OHLCTV.zip 
     cd ../
     cd user_data/data/
     echo "----------------------------"
     echo "Initializing Kraken OHLCV to Freqtrade"
     echo "----------------------------"
     sleep 2;
-    python3 fetch_freq_OHLCV.py
+    sudo python3 fetch_freq_OHLCV.py
     echo "----------------------------"
     echo "Convert success"
     echo "----------------------------"
+    rm -rf tmp
     cd ../../
     cd build_helpers
-    rm -rf Kraken_OHLCVT.zip
+
     cd ../
+    deactivate
+    rm -rf envk
+    source .env/bin/activate
+    echo "____________________________"
+    echo "Initializing Training Menu  "
+    echo "____________________________"
+    python3 genTrainingSet.py
+
 
 }
 # Upgrade the bot
@@ -357,6 +372,7 @@ install
 ;;
 --kraken|-k)
 install_kraken
+kraken_ohlcv_build
 ;;
 --config|-c)
 config
