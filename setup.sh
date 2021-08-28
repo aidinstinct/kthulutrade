@@ -306,6 +306,9 @@ function install_kraken() {
     elif [ -x "$(command -v apt-get)" ]
     then
         echo "Debian/Ubuntu detected. Setup for this system in-progress"
+        sudo apt install python3-venv
+        sudo apt install python3-pip
+        pip3 install gdown
         install_debian_kraken
     else
         echo "This script does not support your OS."
