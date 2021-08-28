@@ -307,14 +307,13 @@ function install_kraken() {
         echo "Debian/Ubuntu detected. Setup for this system in-progress"
         sudo apt install python3-venv
         sudo apt install python3-pip
-        
         install_debian_kraken
-        kraken_ohlcv_build
     else
         echo "This script does not support your OS."
         echo "If you have Python3.6 or Python3.7, pip, virtualenv, ta-lib you can continue."
         echo "Wait 10 seconds to continue the next install steps or use ctrl+c to interrupt this shell."
         sleep 10
+    kraken_ohlcv_build
     fi
 
     echo
