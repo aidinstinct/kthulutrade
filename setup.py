@@ -49,6 +49,7 @@ setup(
         'python-telegram-bot>=13.4',
         'arrow>=0.17.0',
         'cachetools',
+        'gdown==3.3.1',
         'requests',
         'urllib3',
         'wrapt',
