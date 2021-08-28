@@ -103,7 +103,8 @@ def buildJson():
         myclient = pymongo.MongoClient("mongodb://localhost:27017/")
         mydb = myclient["freq_kraken"]
         fs = gridfs.GridFS(mydb, collection=f'{one_}/{two_}')
-        fs.put(f.read(), encoding='utf-8') 
+       #configure your mongodb first
+       #fs.put(f.read(), encoding='utf-8') 
         
         
 
