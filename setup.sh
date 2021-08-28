@@ -164,7 +164,6 @@ function install_debian_kraken() {
     sudo apt-get install unzip
     sudo apt-get install -y build-essential autoconf libtool pkg-config make wget git libpython3-dev
     install_talib
-    kraken_ohlcv_build
 }
 
 function kraken_ohlcv_build() {
@@ -308,8 +307,9 @@ function install_kraken() {
         echo "Debian/Ubuntu detected. Setup for this system in-progress"
         sudo apt install python3-venv
         sudo apt install python3-pip
-        pip3 install gdown
+        
         install_debian_kraken
+        kraken_ohlcv_build
     else
         echo "This script does not support your OS."
         echo "If you have Python3.6 or Python3.7, pip, virtualenv, ta-lib you can continue."
