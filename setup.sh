@@ -313,8 +313,9 @@ function install_kraken() {
         echo "If you have Python3.6 or Python3.7, pip, virtualenv, ta-lib you can continue."
         echo "Wait 10 seconds to continue the next install steps or use ctrl+c to interrupt this shell."
         sleep 10
-    kraken_ohlcv_build
     fi
+    source .env/bin/activate
+    kraken_ohlcv_build
 
     echo
     reset
