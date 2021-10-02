@@ -6,7 +6,7 @@ logging.basicConfig(filename='build_kraken_data.log', level=logging.DEBUG)
 
 async def build_kraken_data():
     thisdir = os.getcwd()
-    get_coins = ['XBT', 'ETH', 'ADA', 'MLN', 'EWT', 'AAVE', 'ALGO', 'ATOM', 'BCH', 'EOS', 'ETC', 'KAVA', 'KSM', 'LINK', 'LTC', 'MANA', 'MLN', 'QTUM', 'STORJ', 'WAVES', 'XTZ', 'USDT']
+    get_coins = ['XBT','ETH','ADA','MLN','EWT','AAVE','ALGO','ANKR','BAL','BAT','BNT','COMP','CRV','DAI','DASH','DOT','ENJ','EOS','ETC','EUR','FIL','FLOW','GBP','GHST','GNO','GRT','ICX','KAVA','KEEP','KNC','KSM','LINK','LPT','LSK','LTC','MANA','MATIC','MINA','MKR','NANO','OCEAN','OMG','OXT','PAXG','QTUM','RARI','REN','REP','REPV2','SAND','SC','SNX','AUD','SOL','SRM','STORJ','SUSHI','TBTC','TRX','UNI','USDC','USD','USDT','WAVES','XDG','XLM','XRP','XTZ','YFI','ZEC','ZRX','ATOM','BCH']
 
     #get_coins = ['XBT']
     print(thisdir+'/kraken_csv/all')
