@@ -180,7 +180,7 @@ function kraken_ohlcv_build() {
     echo "----------------------------"
     echo "Fetching Kraken OHLCV"
     echo "----------------------------"
-    gdown --id 1XkHZhRwHckalXNhCMsrlHIICYomDmIFj
+    gdown --id 1Y2LLx4fDyPrleYeCqgOZnIW01GlooBHq
     mkdir ../user_data/data/tmp
     mkdir ../user_data/data/kraken_csv
     mkdir ../user_data/data/kraken_csv/all
